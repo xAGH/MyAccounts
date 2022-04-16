@@ -14,6 +14,7 @@ class APP():
     PORT = int(getenv("APP_PORT", "3000"))
     DEBUG = bool(getenv("APP_DEBUG", True))
     CORS = getenv("CORS_ORIGIN", "localhost:4200")
+    TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 class KEYS():
     JWT = getenv("JWT_KEY")
