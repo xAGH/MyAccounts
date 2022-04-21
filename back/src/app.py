@@ -36,5 +36,7 @@ class Aplication:
 
     @classmethod
     def __register_routes(cls):
-        cls.app.add_url_rule(users["index"], view_func=users["index_controller"])
+        # Users
+        cls.app.add_url_rule(users["login"], view_func=users["login_controller"])
+        cls.app.add_url_rule(users["register"], view_func=users["register_controller"])
     

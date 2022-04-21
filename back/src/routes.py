@@ -1,7 +1,9 @@
-from src.controllers.users.login_controller import LoginController
+from src.controllers.users.login_controller import LoginUserController
+from src.controllers.users.register_controller import RegisterUserController
 
-version = "/api/v01"
+api_version = "/api/v01"
 
 users: dict = {
-   "index": "/", "index_controller": LoginController.as_view("index")
+   "login": f"{api_version}/login", "login_controller": LoginUserController.as_view("login"),
+   "register": f"{api_version}/register", "register_controller": RegisterUserController.as_view("register"),
 }

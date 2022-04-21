@@ -2,7 +2,7 @@ import datetime
 from src.utils.db_util import db
 from src.config import APP
 
-class User(db.Model):
+class Moves(db.Model):
     user_document = db.Column(db.String(20))
     paid_with = db.Column(db.String(4), nullable=False)
     amount = db.Column(db.Numeric(), nullable=False)
