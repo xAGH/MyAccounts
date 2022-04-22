@@ -36,9 +36,9 @@ class RegisterUserController(MethodView):
                     name = content.get("name"),
                     email = content.get("email"),
                     password = bytes.decode(hashpw(bytes(content.get("password"), 'utf-8'), gensalt()), 'utf-8'),
-                    cash_balance = content.get("cash_balance") or None,
-                    card_balance = content.get("card_balance") or None,
-                    savings = content.get("savings") or None
+                    cash_balance = content.get("cash_balance"),
+                    card_balance = content.get("card_balance"),
+                    savings = content.get("savings")
                 )
             )
             db.session.commit()

@@ -5,7 +5,7 @@ from src.config import APP
 class Users(db.Model):
     document = db.Column(db.String(20), primary_key=True)
     name = db.Column(db.String(150), nullable=False)
-    email = db.Column(db.String(150), nullable=False)
+    email = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(200), nullable=False)
     cash_balance = db.Column(db.Numeric(), nullable=False)
     card_balance = db.Column(db.Numeric(), nullable=False)
