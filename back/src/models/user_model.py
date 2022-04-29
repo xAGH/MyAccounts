@@ -1,6 +1,5 @@
-from datetime import datetime
-from src.utils.db_util import db
-from src.config import APP
+from src.utils.instances import db
+from src.utils.functions import time
 
 class Users(db.Model):
     document = db.Column(db.String(20), primary_key=True)
@@ -10,8 +9,8 @@ class Users(db.Model):
     cash_balance = db.Column(db.Numeric(), nullable=False)
     card_balance = db.Column(db.Numeric(), nullable=False)
     savings = db.Column(db.Numeric(), nullable=False)
-    join_at = db.Column(db.DateTime, nullable=False, default=datetime.now().strftime(APP.TIME_FORMAT))
-    last_login = db.Column(db.DateTime, nullable=False, default=datetime.now().strftime(APP.TIME_FORMAT))
+    join_at = db.Column(db.DateTime, nullable=False, default=time())
+    last_login = db.Column(db.DateTime, nullable=False, default=time())
 
     def __init__(
             self, document, name, email,

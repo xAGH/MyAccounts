@@ -1,5 +1,4 @@
-from src.controllers.users.login_controller import LoginUserController
-from src.controllers.users.register_controller import RegisterUserController
+from src.controllers.users.auth_controller import RegisterUserController, LoginUserController
 
 api_version = "/api/v01"
 
